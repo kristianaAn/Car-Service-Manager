@@ -1,4 +1,4 @@
-package models;
+package models.carsForService;
 
 import outputMessages.ExceptionMessages;
 
@@ -26,7 +26,7 @@ public class Car {
 
     public void setBrand(String brand) {
         if (nullInput(brand)) {
-            throw new IllegalArgumentException(ExceptionMessages.NULL_BRAND);
+            throw new IllegalArgumentException(ExceptionMessages.INVALID_BRAND);
         }
         this.brand = brand;
     }
@@ -37,7 +37,7 @@ public class Car {
 
     public void setModel(String model) {
         if (nullInput(model)) {
-            throw new IllegalArgumentException(ExceptionMessages.NULL_MODEL);
+            throw new IllegalArgumentException(ExceptionMessages.INVALID_MODEL);
         }
         this.model = model;
     }
