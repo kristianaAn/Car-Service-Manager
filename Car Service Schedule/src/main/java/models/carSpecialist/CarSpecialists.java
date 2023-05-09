@@ -6,11 +6,11 @@ import outputMessages.ExceptionMessages;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public abstract class carSpecialists implements carSpecialistImpl {
+public abstract class CarSpecialists implements CarSpecialist {
     private String name;
     private Map<Integer, Car> carsToService;
 
-    public carSpecialists (String name) {
+    public CarSpecialists(String name) {
         setName(name);
         this.carsToService = new LinkedHashMap<>();
     }
@@ -21,7 +21,7 @@ public abstract class carSpecialists implements carSpecialistImpl {
     }
 
     @Override
-    public Map<Integer,Car> getCars() {
+    public Map<Integer, Car> getCars() {
         return this.carsToService;
     }
 

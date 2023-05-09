@@ -5,7 +5,7 @@ import outputMessages.ExceptionMessages;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class Car {
+public class Car implements CarsImpl{
     private String brand;
     private String model;
     private Set<String> partsForChange;
@@ -48,5 +48,10 @@ public class Car {
 
     public void setPartsForChange(Set<String> partsForChange) {
         this.partsForChange = partsForChange;
+    }
+
+    @Override
+    public void addCarToSpecialist(String name) {
+
     }
 }

@@ -4,7 +4,7 @@ import models.carsForService.Car;
 
 import java.util.Map;
 
-public interface carSpecialistImpl {
+public interface CarSpecialist {
     String getName();
 
     Map<Integer, Car> getCars();
