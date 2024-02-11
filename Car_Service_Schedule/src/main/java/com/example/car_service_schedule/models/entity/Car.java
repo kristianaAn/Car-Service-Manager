@@ -36,11 +36,11 @@ public class Car extends BaseEntity {
     private List<CarPartForChange> carPartForChangesList;
 
     @ManyToOne
-    @JoinColumn(name = "mechanic", referencedColumnName = "id")
+    @JoinColumn(name = "mechanic_id", referencedColumnName = "id")
     private Mechanic mechanic;
 
     @ManyToOne
-    @JoinColumn(name = "customer", referencedColumnName = "id")
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer owner;
 
     @Column(columnDefinition = "TEXT")
