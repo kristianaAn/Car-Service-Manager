@@ -1,7 +1,7 @@
 package com.example.car_service_schedule.models.beans;
 
 public class LoggedUser {
-    private int id;
+    private long id;
     private String username;
     private String password;
     private String role;
@@ -9,11 +9,11 @@ public class LoggedUser {
     public LoggedUser() {
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

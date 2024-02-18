@@ -1,17 +1,15 @@
 package com.example.car_service_schedule.models.dto;
 
-import com.example.car_service_schedule.validations.LoginUserDataMatch;
-
-@LoginUserDataMatch
-public class LoginUserInfoDTO extends BaseEntityDTO {
+public class UserDTO extends BaseEntityDTO {
     private String username;
+
     private String password;
+
     private String role;
 
-    public LoginUserInfoDTO(String username, String password, String role) {
-        this.username = username;
-        this.password = password;
-        this.role = role;
+    private String mechanic;
+
+    public UserDTO() {
     }
 
     public String getUsername() {
@@ -36,5 +34,13 @@ public class LoginUserInfoDTO extends BaseEntityDTO {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getMechanic() {
+        return mechanic;
+    }
+
+    public void setMechanic(String mechanic) {
+        this.mechanic = mechanic;
     }
 }
