@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MechanicsRepository extends JpaRepository<Mechanic, Long> {
 
+//    Mechanic findMechanicByCarList(List<Car> carList);
 }

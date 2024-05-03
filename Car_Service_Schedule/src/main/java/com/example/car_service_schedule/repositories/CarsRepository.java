@@ -17,4 +17,5 @@ public interface CarsRepository extends JpaRepository<Car, Long> {
     @Transactional
     @Query("update Car c set c.owner.name = :customerName")
     void updateCarCustomerName(String customerName);
+
 }

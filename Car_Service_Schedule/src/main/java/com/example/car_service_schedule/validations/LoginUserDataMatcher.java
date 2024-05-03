@@ -1,7 +1,7 @@
 package com.example.car_service_schedule.validations;
 
 import com.example.car_service_schedule.models.dto.LoginUserInfoDTO;
-import com.example.car_service_schedule.models.entity.Users;
+import com.example.car_service_schedule.models.entity.softUsers.Users;
 import com.example.car_service_schedule.repositories.UsersRepository;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;

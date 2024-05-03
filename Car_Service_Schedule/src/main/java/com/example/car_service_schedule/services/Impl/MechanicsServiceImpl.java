@@ -17,4 +17,9 @@ public class MechanicsServiceImpl implements MechanicsService {
     public void addNewMechanic(Mechanic mechanic) {
         this.mechanicsRepository.save(mechanic);
     }
+
+//    @Override
+//    public Mechanic findMechanicOfCar(List<Car> car) {
+//        return this.mechanicsRepository.findMechanicByCarList(car);
+//    }
 }

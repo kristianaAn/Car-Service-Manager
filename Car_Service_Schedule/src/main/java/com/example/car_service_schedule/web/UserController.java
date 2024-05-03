@@ -1,6 +1,7 @@
 package com.example.car_service_schedule.web;
 
 import com.example.car_service_schedule.models.dto.LoginUserInfoDTO;
+import com.example.car_service_schedule.models.dto.UserRegisterInfoDTO;
 import com.example.car_service_schedule.services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -39,4 +40,23 @@ public class UserController extends BaseController{
         return mv;
     }
 
+    @GetMapping("/register")
+    public ModelAndView getRegisterPage(UserRegisterInfoDTO userRegisterInfoDTO) {
+        return super.view("register");
+    }
+
+    @PostMapping("/register")
+    public ModelAndView registerUser(@Valid @ModelAttribute(name = "userRegisterInfoDTO")
+                                         UserRegisterInfoDTO userRegisterInfoDTO, BindingResult bindingResult,
+                                     ModelAndView mv, LoginUserInfoDTO loginUserInfoDTO) {
+
+        if (bindingResult.hasErrors()) {
+            mv.setViewName("register");
+            return mv;
+        }
+
+        this.userService.registerUser(userRegisterInfoDTO);
+        mv.setViewName("login-page");
+        return mv;
+    }
 }

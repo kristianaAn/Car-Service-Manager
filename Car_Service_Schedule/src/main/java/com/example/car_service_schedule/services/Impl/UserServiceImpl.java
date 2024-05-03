@@ -4,7 +4,9 @@ import com.example.car_service_schedule.models.beans.LoggedUser;
 import com.example.car_service_schedule.models.dto.LoginUserInfoDTO;
 import com.example.car_service_schedule.models.dto.LoginUsersImportDTO;
 import com.example.car_service_schedule.models.dto.UserDTO;
-import com.example.car_service_schedule.models.entity.Users;
+import com.example.car_service_schedule.models.dto.UserRegisterInfoDTO;
+import com.example.car_service_schedule.models.entity.softUsers.Roles;
+import com.example.car_service_schedule.models.entity.softUsers.Users;
 import com.example.car_service_schedule.repositories.UsersRepository;
 import com.example.car_service_schedule.services.UserService;
 import com.google.gson.Gson;
@@ -68,6 +70,13 @@ public class UserServiceImpl implements UserService {
         this.loggedUser.setUsername(mapped.getUsername());
         this.loggedUser.setPassword(mapped.getPassword());
         this.loggedUser.setRole(mapped.getRole());
+    }
+
+    @Override
+    public void registerUser(UserRegisterInfoDTO userRegisterInfoDTO) {
+        Users mappedRegisterUser = this.modelMapper.map(userRegisterInfoDTO, Users.class);
+        mappedRegisterUser.setRole(Roles.USER);
+        this.usersRepository.saveAndFlush(mappedRegisterUser);
     }
 
 }
