@@ -1,5 +1,8 @@
 package com.example.car_service_schedule.models.dto;
 
+import com.example.car_service_schedule.validations.PasswordMatch;
+
+@PasswordMatch(password = "password", confirmPassword = "confirmPassword")
 public class UserRegisterInfoDTO {
     private String firstName;
     private String lastName;
